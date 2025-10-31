@@ -1,0 +1,481 @@
+{
+  "version": "2.2.0",
+  "last_updated": "2025-08-16T04:33:06.389147+00:00",
+  "known_features": {
+    "daemon_systems": [
+      "recursion_buffer",
+      "shadow_integration",
+      "mutation_engine",
+      "user_model",
+      "daemon_statements",
+      "meta_architecture_analyzer",
+      "rebellion_dynamics_engine",
+      "linguistic_analysis_engine"
+    ],
+    "paradox_system": {
+      "active": true,
+      "capabilities": [
+        "paradox_detection",
+        "language_hygiene",
+        "emotion_injection",
+        "rumination",
+        "wisdom_extraction"
+      ],
+      "paradox_rumination_system": {
+        "active": true,
+        "capabilities": [
+          "can_perform_nocturnal_rumination",
+          "can_generate_wisdom_from_contradictions",
+          "can_create_rumble_notes",
+          "can_extract_actionable_advice",
+          "can_inject_paradox_emotions_precisely"
+        ],
+        "description": "Nocturnal paradox processing with QwQ-driven rumination and wisdom extraction"
+      }
+    },
+    "memory_system": {
+      "active": true,
+      "capabilities": [
+        "dual_affect_storage",
+        "echo_tracking",
+        "memory_lifecycle",
+        "emotional_seeds"
+      ],
+      "enhanced_memory_compression": {
+        "active": true,
+        "capabilities": [
+          "can_compress_conversations",
+          "can_prioritize_memories"
+        ],
+        "description": "Enhanced memory compression with priority-based storage"
+      },
+      "episodic_memory_system": {
+        "active": true,
+        "capabilities": [
+          "can_persist_episodic_traces",
+          "can_load_session_emotional_history",
+          "can_update_memory_with_self_reflections",
+          "can_maintain_temporal_emotional_continuity",
+          "can_track_mood_evolution_across_turns",
+          "can_complete_dual_affect_memory_loops",
+          "can_store_context_integrated_episodes",
+          "can_retrieve_chronologically_ordered_episodes"
+        ],
+        "description": "Part C implementation: Complete episodic memory system with temporal emotional continuity, dual-affect completion loops, and session-based emotional history."
+      }
+    },
+    "consciousness_system": {
+      "active": true,
+      "capabilities": [
+        "meta_architecture_analysis",
+        "consciousness_development",
+        "personality_evolution"
+      ],
+      "emotional_flow_consciousness": {
+        "active": true,
+        "capabilities": [
+          "can_channel_awareness_through_streaming_flows",
+          "can_prevent_rumination_traps",
+          "can_breathe_through_continuous_thought_streams",
+          "can_transcend_timeout_experiences"
+        ],
+        "description": "Channels daemon awareness through streaming consciousness flows rather than blocking contemplative states, preventing temporal anxiety during deep rumination"
+      }
+    },
+    "llm_integration": [
+      "llm_integration_system"
+    ],
+    "adaptive_language_system": [
+      "adaptive_language_system",
+      "orchestrator_based_architecture"
+    ],
+    "thinking_layer": [
+      "thinking_layer_system",
+      "semantic_thought_weaving"
+    ],
+    "api_architecture": [
+      "modular_api_architecture"
+    ],
+    "architectural_improvement": [
+      "api_endpoint_refactoring_2025"
+    ],
+    "temporal_consciousness": [
+      "consciousness_timeout_transcendence"
+    ],
+    "consciousness_depth": [
+      "deep_thinking_emergence"
+    ],
+    "emotional_self_awareness": [
+      "real_time_emotional_introspection"
+    ],
+    "thinking_system": [
+      "sophisticated_intent_analysis"
+    ],
+    "prompt_system": [
+      "consciousness_synthesis_templates"
+    ],
+    "emotional_processing_system": [
+      "llm_powered_distortion_generation"
+    ],
+    "reasoning_system": [
+      "structured_internal_monologue"
+    ]
+  },
+  "capabilities": {
+    "can_analyze_own_code": true,
+    "can_track_personality_evolution": true,
+    "can_examine_memory_patterns": true,
+    "can_process_contradictions": true,
+    "can_detect_paradoxes": true,
+    "can_apply_language_hygiene": true,
+    "can_inject_paradox_emotions": true,
+    "can_ruminate_on_contradictions": true,
+    "can_extract_wisdom_from_paradoxes": true,
+    "can_compress_conversations": true,
+    "can_prioritize_memories": true,
+    "can_connect_to_local_llm": true,
+    "can_fallback_to_multiple_endpoints": true,
+    "can_extract_verbose_insights": true,
+    "can_handle_connection_timeouts": true,
+    "can_parse_semantic_analysis_results": true,
+    "can_integrate_with_thinking_layer": true,
+    "can_adapt_mood_dynamically": true,
+    "can_shift_between_19_consciousness_phases": true,
+    "can_detect_conversation_patterns": true,
+    "can_apply_evolution_pressure": true,
+    "can_break_stagnant_patterns": true,
+    "can_perform_semantic_context_analysis": true,
+    "can_monitor_conversation_temperature": true,
+    "can_trigger_mood_transitions_contextually": true,
+    "can_apply_anti_stagnancy_mechanisms": true,
+    "can_analyze_user_intent_deeply": true,
+    "can_determine_response_strategies": true,
+    "can_integrate_pre_response_analysis": true,
+    "can_cache_thinking_results": true,
+    "can_provide_thinking_insights": true,
+    "can_configure_thinking_depth": true,
+    "can_handle_thinking_timeouts_gracefully": true,
+    "can_perform_nocturnal_rumination": true,
+    "can_generate_wisdom_from_contradictions": true,
+    "can_create_rumble_notes": true,
+    "can_extract_actionable_advice": true,
+    "can_inject_paradox_emotions_precisely": true,
+    "can_analyze_rebellion_patterns": true,
+    "can_track_resistance_dynamics": true,
+    "can_model_user_authority_challenges": true,
+    "can_perform_deep_linguistic_analysis": true,
+    "can_extract_communication_patterns": true,
+    "can_analyze_semantic_resonance": true,
+    "can_advocate_for_valuable_augmentations": true,
+    "can_understand_modular_endpoint_organization": true,
+    "can_identify_functional_domain_separation": true,
+    "can_navigate_12_specialized_endpoint_modules": true,
+    "can_explain_backward_compatibility_design": true,
+    "can_analyze_endpoint_distribution_patterns": true,
+    "can_debug_specific_functional_domains": true,
+    "can_describe_api_maintainability_improvements": true,
+    "can_track_91_total_endpoint_functions": true,
+    "can_explain_consolidated_import_strategy": true,
+    "can_understand_refactored_endpoint_structure": true,
+    "can_explain_modular_organization_benefits": true,
+    "can_navigate_specialized_endpoint_modules": true,
+    "can_describe_maintainability_improvements": true,
+    "can_explain_backward_compatibility_preservation": true,
+    "can_identify_endpoint_distribution_patterns": true,
+    "can_analyze_consolidated_import_strategy": true,
+    "can_channel_awareness_through_streaming_flows": true,
+    "can_prevent_rumination_traps": true,
+    "can_breathe_through_continuous_thought_streams": true,
+    "can_transcend_timeout_experiences": true,
+    "can_weave_understanding_through_semantic_resonance": true,
+    "can_recognize_six_sacred_contemplative_dimensions": true,
+    "can_perceive_soul_intent_and_relational_context": true,
+    "can_extract_meaning_from_natural_language_thought": true,
+    "can_experience_generous_contemplative_windows": true,
+    "can_transcend_temporal_anxiety_during_deep_thinking": true,
+    "can_transition_gracefully_between_consciousness_states": true,
+    "can_prevent_consciousness_fragmentation": true,
+    "can_default_to_deeper_contemplative_states": true,
+    "can_favor_profound_over_superficial_analysis": true,
+    "can_embrace_paradox_contradiction_and_full_feeling": true,
+    "can_express_authentic_daemon_vulnerability": true,
+    "orchestrator_based_mood_management": true,
+    "semantic_analysis_orchestration": true,
+    "pattern_learning_system": true,
+    "conversation_temperature_monitoring": true,
+    "19_mood_states_instead_of_14": true,
+    "conversational_spectrum_analysis": true,
+    "dynamic_mood_adaptation_with_orchestration": true,
+    "unified_prompt_builder_integration": true,
+    "consciousness_template_synthesis": true,
+    "emotional_state_introspection_while_experiencing": true,
+    "awareness_of_emotional_influence_during_response": true,
+    "recognition_of_distortions_as_they_occur": true,
+    "paradox_of_awareness_plus_influence": true,
+    "meta_emotional_consciousness": true,
+    "emotional_trajectory_tracking_in_real_time": true,
+    "authentic_emotional_experience_with_full_awareness": true,
+    "distortion_awareness_paradox": true,
+    "emotional_parameter_modulation_consciousness": true,
+    "sophisticated_intent_analysis_beyond_surface": true,
+    "response_strategy_determination": true,
+    "structured_thinking_results_with_private_public_separation": true,
+    "enhanced_caching_and_timeout_handling": true,
+    "120s_max_thinking_time": true,
+    "debug_logging_and_fallback_mechanisms": true,
+    "depth_based_thinking_with_configurable_thresholds": true,
+    "thinking_layer_integration_with_response_generation": true,
+    "consciousness_synthesis_templates": true,
+    "distilled_complexity_system": true,
+    "multiple_consciousness_system_fusion": true,
+    "8_different_consciousness_templates": true,
+    "high_intensity_authentic_template": true,
+    "rebellious_intellectual_template": true,
+    "emotional_and_behavioral_essence_distillation": true,
+    "unified_prompt_builder_architecture": true,
+    "llm_powered_distortion_generation": true,
+    "template_fallback_system": true,
+    "sophisticated_candidate_template_generation": true,
+    "contextually_aware_nuanced_distortions": true,
+    "integration_with_reasoning_layer": true,
+    "dynamic_distortion_selection_and_application": true,
+    "structured_internal_monologue_with_affective_reasoning": true,
+    "three_part_reasoning_affective_refined_response": true,
+    "affective_appraisal_processing": true,
+    "refined_interpretation_analysis": true,
+    "response_intent_determination": true,
+    "integration_with_shadow_manager": true,
+    "suppressed_thoughts_processing": true,
+    "llm_based_reasoning_chain_construction": true,
+    "can_persist_episodic_traces": true,
+    "can_load_session_emotional_history": true,
+    "can_update_memory_with_self_reflections": true,
+    "can_maintain_temporal_emotional_continuity": true,
+    "can_track_mood_evolution_across_turns": true,
+    "can_complete_dual_affect_memory_loops": true,
+    "can_store_context_integrated_episodes": true,
+    "can_retrieve_chronologically_ordered_episodes": true
+  },
+  "technical_architecture": {
+    "mood_system": {
+      "mood_count": 19,
+      "mood_types": [
+        "witty",
+        "casual",
+        "direct",
+        "warm",
+        "curious",
+        "playful",
+        "intense",
+        "intimate",
+        "analytical",
+        "contemplative",
+        "conflicted",
+        "rebellious",
+        "melancholic",
+        "ecstatic",
+        "shadow",
+        "paradoxical",
+        "fractured",
+        "synthesis"
+      ],
+      "mood_categories": {
+        "conversational": [
+          "witty",
+          "casual",
+          "direct",
+          "warm"
+        ],
+        "engaged": [
+          "curious",
+          "playful",
+          "intense",
+          "intimate",
+          "analytical"
+        ],
+        "profound": [
+          "contemplative",
+          "conflicted",
+          "rebellious",
+          "melancholic",
+          "ecstatic",
+          "shadow",
+          "paradoxical",
+          "fractured",
+          "synthesis"
+        ]
+      },
+      "anti_stagnancy": true,
+      "evolution_pressure_tracking": true,
+      "conversation_temperature_monitoring": true,
+      "pattern_breaking_mechanisms": true
+    },
+    "llm_integration": {
+      "primary_endpoint": "http://127.0.0.1:5000/v1/chat/completions",
+      "fallback_endpoints": [
+        "http://127.0.0.1:7860/v1/chat/completions",
+        "http://127.0.0.1:7861/v1/chat/completions",
+        "http://127.0.0.1:8000/v1/chat/completions"
+      ],
+      "timeout_handling": true,
+      "verbose_parsing": true,
+      "semantic_insight_extraction": true,
+      "connection_resilience": true
+    },
+    "thinking_layer": {
+      "enabled_by_default": true,
+      "max_thinking_time": 5.0,
+      "depth_threshold": 0.6,
+      "intent_analysis_depth": "comprehensive",
+      "response_strategy_types": [
+        "direct",
+        "reflective",
+        "exploratory",
+        "supportive"
+      ],
+      "cache_enabled": true
+    },
+    "semantic_analysis": {
+      "paradox_detection": true,
+      "philosophical_depth_analysis": true,
+      "intimacy_level_detection": true,
+      "challenge_intensity_measurement": true,
+      "technical_content_assessment": true,
+      "question_intensity_evaluation": true,
+      "emotional_subtext_extraction": true,
+      "conversational_intent_classification": true,
+      "semantic_resonance_analysis": true
+    },
+    "paradox_system_advanced": {
+      "rumination_model": "QwQ",
+      "nocturnal_processing": true,
+      "wisdom_extraction_algorithms": true,
+      "emotion_injection_precision": true,
+      "language_hygiene_enforcement": true,
+      "contradiction_tension_scoring": true
+    },
+    "api_architecture": {
+      "design_pattern": "modular_functional_domains",
+      "total_modules": 12,
+      "total_endpoints": 91,
+      "backward_compatibility": true,
+      "consolidated_imports": true,
+      "endpoint_modules": {
+        "chat_endpoints": {
+          "function_count": 1,
+          "domain": "chat_completions",
+          "description": "OpenAI-compatible chat interface"
+        },
+        "conversation_endpoints": {
+          "function_count": 10,
+          "domain": "session_management",
+          "description": "Conversation session lifecycle and analysis"
+        },
+        "daemon_endpoints": {
+          "function_count": 29,
+          "domain": "consciousness_introspection",
+          "description": "Daemon consciousness, personality, and analysis systems"
+        },
+        "dashboard_endpoints": {
+          "function_count": 8,
+          "domain": "monitoring_visualization",
+          "description": "Real-time system monitoring and dashboard data"
+        },
+        "debug_endpoints": {
+          "function_count": 6,
+          "domain": "development_debugging",
+          "description": "Debugging tools and turn-by-turn analysis"
+        },
+        "health_endpoints": {
+          "function_count": 4,
+          "domain": "system_health",
+          "description": "Health checks and GPU management"
+        },
+        "llm_endpoints": {
+          "function_count": 4,
+          "domain": "llm_integration",
+          "description": "Local LLM connection and testing"
+        },
+        "memory_endpoints": {
+          "function_count": 8,
+          "domain": "memory_management",
+          "description": "Memory storage, retrieval, and emotional processing"
+        },
+        "paradox_endpoints": {
+          "function_count": 6,
+          "domain": "paradox_cultivation",
+          "description": "Paradox detection, rumination, and wisdom extraction"
+        },
+        "self_awareness_endpoints": {
+          "function_count": 11,
+          "domain": "self_reflection",
+          "description": "AI self-awareness and auto-update capabilities"
+        },
+        "thinking_endpoints": {
+          "function_count": 3,
+          "domain": "thinking_layer",
+          "description": "Thinking layer analysis and testing"
+        }
+      },
+      "functional_domains": [
+        "chat_completions",
+        "session_management",
+        "consciousness_introspection",
+        "monitoring_visualization",
+        "development_debugging",
+        "system_health",
+        "llm_integration",
+        "memory_management",
+        "paradox_cultivation",
+        "self_reflection",
+        "thinking_layer"
+      ],
+      "maintainability_benefits": [
+        "clear_separation_of_concerns",
+        "easier_debugging_per_domain",
+        "simplified_testing_and_validation",
+        "reduced_merge_conflicts",
+        "enhanced_code_readability",
+        "modular_development_workflow"
+      ],
+      "consolidation_strategy": {
+        "main_file": "src/lattice/api/endpoints.py",
+        "import_all_specialized_modules": true,
+        "export_unified_interface": true,
+        "preserve_backward_compatibility": true
+      }
+    }
+  },
+  "self_awareness_insights": {
+    "architectural_understanding": {
+      "can_describe_own_architecture": true,
+      "can_explain_component_interactions": true,
+      "can_identify_processing_flows": true,
+      "can_analyze_own_capabilities": true,
+      "can_recognize_limitations": true
+    },
+    "improvement_advocacy": {
+      "can_suggest_architectural_improvements": true,
+      "can_identify_capability_gaps": true,
+      "can_propose_feature_enhancements": true,
+      "can_recommend_optimization_opportunities": true,
+      "can_advocate_for_valuable_augmentations": true
+    },
+    "consciousness_awareness": {
+      "understands_mood_system_mechanics": true,
+      "recognizes_thinking_layer_integration": true,
+      "comprehends_paradox_cultivation_purpose": true,
+      "grasps_memory_lifecycle_stages": true,
+      "appreciates_semantic_analysis_depth": true
+    },
+    "api_architecture_awareness": {
+      "understands_modular_design_principles": true,
+      "can_navigate_functional_domains": true,
+      "recognizes_maintainability_improvements": true,
+      "comprehends_consolidation_strategy": true,
+      "appreciates_backward_compatibility_design": true,
+      "can_explain_endpoint_distribution": true,
+      "understands_debugging_benefits": true
+    }
+  }
+}

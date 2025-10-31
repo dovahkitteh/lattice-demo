@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "consciousness-researcher",
+      "python-codebase-architect", 
+      "database-architect",
+      "async-systems-engineer",
+      "llm-integration-specialist",
+      "consciousness-architecture-analyst",
+      "performance-optimizer",
+      "debugger",
+      "gothic-ui-designer"
+    ]
+  }
+}

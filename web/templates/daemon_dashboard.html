@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lattice.g | Daemon Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}?v=20250722_10_hierarchy_fixed">
+    <link rel="stylesheet" href="{{ url_for('static', path='emergency-text-fix.css') }}?v=20250722_targeted_headers_only">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="title">◆ Lattice.g Daemon Dashboard ◆</h1>
+                <div id="connectionStatus" class="connection-status">
+                    <span id="statusDot" class="status-dot"></span>
+                    <span id="statusText">Connecting...</span>
+                </div>
+                <div class="model-controls" style="display:flex; align-items:center; gap:8px;">
+                    <select id="modelSelect" style="padding:6px 10px; border-radius:4px; font-family:var(--font-gothic); font-size:0.8rem;"></select>
+                    <button id="applyModelBtn" style="padding:6px 12px; font-size:0.8rem;">Reload</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-content">
+            <div class="dashboard-main-content">
+                <!-- Left Sidebar: Sessions -->
+                <div class="sessions-panel">
+                    <div class="sessions-header">
+                        <h3>Conversations</h3>
+                    </div>
+                    <div id="sessionsList" class="sessions-list">
+                        <!-- Session items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Center: Chat and Enhanced Panels -->
+                <div class="chat-and-enhanced-panels">
+                    <!-- Chat Interface -->
+                    <div class="chat-panel">
+                        <header class="chat-header">
+                            <h3>Live Interaction</h3>
+                            <div class="session-controls">
+                                <span id="sessionInfo">Session: ...</span>
+                                <button id="newSessionBtn">New</button>
+                                <button id="uploadSeedBtn" class="upload-seed-btn" title="Upload Emotional Memory Seed JSON">📁 Upload Seed</button>
+                                <input type="file" id="seedFileInput" accept=".json" style="display: none;">
+                            </div>
+                        </header>
+                        <div id="chatMessages" class="chat-messages">
+                            <div class="empty-state">◆ Begin conversation to witness recursive evolution ◆</div>
+                        </div>
+                        <div class="chat-input-area">
+                            <div id="contextStatus" class="context-status">
+                                <span id="contextUsage">Context: 0/8192 tokens (0%)</span>
+                            </div>
+                            <div class="chat-input-wrapper">
+                                <textarea id="chatInput" placeholder="Type your message..."></textarea>
+                                <button id="sendButton" class="send-button" disabled>➤</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enhanced Dashboard Panels Row -->
+                    <div class="enhanced-panels-row">
+                        <!-- Current Mood Panel -->
+                        <div class="panel current-mood-panel compact">
+                            <h3>Current Mood 
+                                <span class="tooltip-trigger" title="AI's adaptive mood system and consciousness phase">?</span>
+                            </h3>
+                            <div id="currentMoodContent" class="current-mood-content">
+                                <div class="loading-state">Loading mood state...</div>
+                            </div>
+                        </div>
+
+                        <!-- Emotional State Panel -->
+                        <div class="panel emotional-state-panel compact">
+                            <h3>Emotional State 
+                                <span class="tooltip-trigger" title="AI's 28-dimensional emotional vector and core affects">?</span>
+                            </h3>
+                            <div id="emotionalStateContent" class="emotional-state-content">
+                                <div class="loading-state">Loading emotional state...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Model & Thoughts Row -->
+                    <div class="user-thoughts-panels-row">
+                        <!-- User Analysis Panel -->
+                        <div class="panel user-analysis-panel compact">
+                            <h3>User Model 
+                                <span class="tooltip-trigger" title="AI's internal model and understanding of you">?</span>
+                            </h3>
+                            <div id="userAnalysisContent" class="user-analysis-content">
+                                <div class="loading-state">Loading user model...</div>
+                            </div>
+                        </div>
+
+                        <!-- Daemon Thoughts Panel -->
+                        <div class="panel daemon-thoughts-panel compact">
+                            <h3>Daemon Thoughts 
+                                <span class="tooltip-trigger" title="Hidden thoughts normally not visible in responses">?</span>
+                            </h3>
+                            <div id="daemonThoughtsContent" class="daemon-thoughts-content">
+                                <div class="loading-state">Loading daemon thoughts...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Emotional System Panels Row -->
+                    <div class="emotional-panels-row">
+                        <!-- Active Seeds Panel -->
+                        <div class="panel active-seeds-panel compact">
+                            <h3>Active Emotional Seeds 
+                                <span class="tooltip-trigger" title="Current emotional narratives influencing AI behavior">?</span>
+                            </h3>
+                            <div id="activeSeedsContent" class="active-seeds-content">
+                                <div class="loading-state">Loading emotional seeds...</div>
+                            </div>
+                        </div>
+
+                        <!-- Distortion Frame Panel -->
+                        <div class="panel distortion-panel compact">
+                            <h3>Cognitive Lens 
+                                <span class="tooltip-trigger" title="Current cognitive biases and interpretive frameworks">?</span>
+                            </h3>
+                            <div id="distortionContent" class="distortion-content">
+                                <div class="loading-state">Loading distortion data...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: System Status and Analysis -->
+                <div class="system-sidebar">
+                    <!-- System Status Panel -->
+                    <div class="panel daemon-status-panel compact">
+                        <h3>System Status</h3>
+                        <div id="systemStatus" class="system-status-grid compact">
+                            <div class="status-metric">
+                                <div class="metric-label">Recursion Pressure</div>
+                                <div id="recursionPressure" class="metric-value">0.00</div>
+                                <div class="pressure-bar">
+                                    <div id="pressureFill" class="pressure-fill"></div>
+                                </div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Buffer Count</div>
+                                <div id="bufferCount" class="metric-value">0</div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Shadow Charge</div>
+                                <div id="shadowCharge" class="metric-value">0.00</div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Shadow Elements</div>
+                                <div id="shadowElements" class="metric-value">0</div>
+                            </div>
+                            
+                            <!-- New Emotional System Metrics -->
+                            <div class="status-divider">
+                                <span>Emotional System</span>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Emotional Intensity</div>
+                                <div id="emotionalIntensity" class="metric-value">0.00</div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Active Seeds</div>
+                                <div id="activeSeedsCount" class="metric-value">0</div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Regulation Status</div>
+                                <div id="regulationStatus" class="metric-value">Normal</div>
+                            </div>
+                            <div class="status-metric">
+                                <div class="metric-label">Distortion Rate</div>
+                                <div id="distortionRate" class="metric-value">0%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Emotional Metrics Panel -->
+                    <div class="panel emotional-metrics-panel compact">
+                        <h3>Emotional Metrics 
+                            <span class="tooltip-trigger" title="Performance metrics for the emotional cognition system">?</span>
+                        </h3>
+                        <div id="emotionalMetricsContent" class="emotional-metrics-content">
+                            <div class="loading-state">Loading emotional metrics...</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Memories Panel -->
+                    <div class="panel recent-memories-panel compact">
+                        <h3>Recent Memories</h3>
+                        <div id="recentMemoriesContent" class="recent-memories-content">
+                            <div class="loading-state">Loading recent memories...</div>
+                        </div>
+                    </div>
+
+                    <!-- Turn Analysis Panel -->
+                    <div class="panel debug-panel compact">
+                        <h3>Turn Analysis</h3>
+                        <div id="turnDebugContent" class="debug-content">
+                            <div class="debug-section">
+                                <h4>Memory Processing</h4>
+                                <div id="memoryDebugInfo" class="debug-info">
+                                    <div class="debug-metric">
+                                        <span class="metric-label">Memories Stored:</span>
+                                        <span id="memoriesStored" class="metric-value">0</span>
+                                    </div>
+                                    <div class="debug-metric">
+                                        <span class="metric-label">Dual Channel:</span>
+                                        <span id="dualChannelActive" class="metric-value">No</span>
+                                    </div>
+                                    <div class="debug-metric">
+                                        <span class="metric-label">Affect Magnitude:</span>
+                                        <span id="affectMagnitude" class="metric-value">0.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modular Dashboard Architecture -->
+        <script src="{{ url_for('static', path='dashboard-utils.js') }}"></script>
+        <script src="{{ url_for('static', path='dashboard-data-service.js') }}"></script>
+        <script src="{{ url_for('static', path='dashboard-components.js') }}"></script>
+        <script src="{{ url_for('static', path='session-manager.js') }}"></script>
+        <script src="{{ url_for('static', path='chat-interface.js') }}"></script>
+        <script src="{{ url_for('static', path='emotional-system.js') }}"></script>
+        <script src="{{ url_for('static', path='debug-tools.js') }}"></script>
+        <script src="{{ url_for('static', path='mood-styling.js') }}"></script>
+        <script src="{{ url_for('static', path='dashboard-core.js') }}"></script>
+        <script src="{{ url_for('static', path='daemon_dashboard_modular.js') }}"></script>
+        <script src="{{ url_for('static', path='model-switcher.js') }}?v=20250722"></script>
+    </body>
+    </html> 

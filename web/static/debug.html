@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            background: #333;
+        }
+        .success { background: #2a4a2a; }
+        .error { background: #4a2a2a; }
+        .warning { background: #4a4a2a; }
+        button {
+            background: #4ecdc4;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #45b7aa;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Lattice Dashboard Debug Test</h1>
+    <div id="results"></div>
+    
+    <button onclick="testConnection()">Test Connection</button>
+    <button onclick="testDaemonEndpoint()">Test Daemon Endpoint</button>
+    <button onclick="testJavaScript()">Test JavaScript</button>
+    <button onclick="clearResults()">Clear Results</button>
+
+    <script>
+        function addResult(message, type = 'info') {
+            const results = document.getElementById('results');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = `<strong>${new Date().toLocaleTimeString()}:</strong> ${message}`;
+            results.appendChild(div);
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        async function testConnection() {
+            addResult('🧪 Testing connection to service...', 'info');
+            try {
+                const response = await fetch('http://127.0.0.1:11434/health');
+                if (response.ok) {
+                    const data = await response.json();
+                    addResult(`✅ Connection successful! Response: ${JSON.stringify(data)}`, 'success');
+                } else {
+                    addResult(`❌ Connection failed with status: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Connection error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testDaemonEndpoint() {
+            addResult('🧪 Testing daemon endpoint...', 'info');
+            try {
+                const response = await fetch('http://127.0.0.1:11434/v1/daemon/status');
+                if (response.ok) {
+                    const data = await response.json();
+                    addResult(`✅ Daemon endpoint successful! Status: ${JSON.stringify(data, null, 2)}`, 'success');
+                } else {
+                    addResult(`❌ Daemon endpoint failed with status: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Daemon endpoint error: ${error.message}`, 'error');
+            }
+        }
+
+        function testJavaScript() {
+            addResult('🧪 Testing JavaScript functionality...', 'info');
+            
+            // Test basic JavaScript
+            try {
+                const testArray = [1, 2, 3];
+                const testMap = testArray.map(x => x * 2);
+                addResult(`✅ Basic JavaScript works: [${testMap}]`, 'success');
+            } catch (error) {
+                addResult(`❌ Basic JavaScript error: ${error.message}`, 'error');
+            }
+
+            // Test DOM manipulation
+            try {
+                const testElement = document.createElement('div');
+                testElement.textContent = 'Test Element';
+                addResult(`✅ DOM manipulation works`, 'success');
+            } catch (error) {
+                addResult(`❌ DOM manipulation error: ${error.message}`, 'error');
+            }
+
+            // Test async/await
+            try {
+                (async () => {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    addResult(`✅ Async/await works`, 'success');
+                })();
+            } catch (error) {
+                addResult(`❌ Async/await error: ${error.message}`, 'error');
+            }
+
+            // Test fetch API
+            try {
+                if (typeof fetch === 'function') {
+                    addResult(`✅ Fetch API available`, 'success');
+                } else {
+                    addResult(`❌ Fetch API not available`, 'error');
+                }
+            } catch (error) {
+                addResult(`❌ Fetch API error: ${error.message}`, 'error');
+            }
+        }
+
+        // Test if JavaScript is loading at all
+        addResult('🚀 Debug page loaded successfully - JavaScript is working!', 'success');
+        
+        // Test console logging
+        console.log('🔍 Debug console test - this should appear in browser dev tools');
+        console.error('🔍 Debug error test - this should appear in browser dev tools as an error');
+        console.warn('🔍 Debug warning test - this should appear in browser dev tools as a warning');
+    </script>
+</body>
+</html> 

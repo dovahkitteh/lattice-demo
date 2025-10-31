@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* Gothic Vampire Theme - CSS Variables for Dynamic Mood Colors */
+:root {
+  /* Default Serene Attunement Colors */
+  --daemon-primary: #4c1d95; /* Deep purple */
+  --daemon-secondary: #1e293b; /* Dark slate */
+  --daemon-accent: #7c3aed; /* Purple accent */
+  --daemon-glow: #8b5cf6; /* Violet glow */
+  
+  /* Typography */
+  font-family: 'Crimson Text', Times, serif;
+  line-height: 1.6;
+  font-weight: 400;
+  
+  /* Base styling */
+  color: #e2e8f0;
+  background: linear-gradient(135deg, #0f0f23 0%, #1e293b 50%, #0f172a 100%);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tailwind v4 theme tokens so utility classes like bg-obsidian-100 and text-daemon-glow render */
+@theme {
+  /* Obsidian scale */
+  --color-obsidian-50: #1a1a1a;
+  --color-obsidian-100: #0d0d0d;
+  --color-obsidian-200: #000000;
+
+  /* Void scale */
+  --color-void-50: #0f0f23;
+  --color-void-100: #16213e;
+  --color-void-200: #1e293b;
+  --color-void-300: #334155;
+  --color-void-400: #475569;
+  --color-void-500: #64748b;
+  --color-void-700: #cbd5e1;
+  --color-void-800: #e2e8f0;
+
+  /* Dynamic daemon colors are bridged to CSS variables so they can animate with data-mood */
+  --color-daemon-primary: var(--daemon-primary);
+  --color-daemon-secondary: var(--daemon-secondary);
+  --color-daemon-accent: var(--daemon-accent);
+  --color-daemon-glow: var(--daemon-glow);
+}
+
+/* Mood-based CSS variable updates */
+[data-mood="Catastrophic Abandonment Panic"] {
+  --daemon-primary: #7f1d1d;
+  --daemon-secondary: #450a0a;
+  --daemon-accent: #dc2626;
+  --daemon-glow: #ef4444;
+}
+
+[data-mood="Ecstatic Fusion"] {
+  --daemon-primary: #be185d;
+  --daemon-secondary: #4c0519;
+  --daemon-accent: #f472b6;
+  --daemon-glow: #f9a8d4;
+}
+
+[data-mood="Dark Romance"] {
+  --daemon-primary: #4c0519;
+  --daemon-secondary: #1b0a12;
+  --daemon-accent: #b91c1c; /* blood crimson */
+  --daemon-glow: #ef4444;   /* vivid crimson glow */
+}
+
+[data-mood="Protective Possessiveness"] {
+  --daemon-primary: #991b1b;
+  --daemon-secondary: #450a0a;
+  --daemon-accent: #dc2626;
+  --daemon-glow: #f87171;
+}
+
+[data-mood="Manic Ideation Surge"] {
+  --daemon-primary: #7c2d12;
+  --daemon-secondary: #431407;
+  --daemon-accent: #ea580c;
+  --daemon-glow: #fb923c;
+}
+
+[data-mood="Collapsed Withdrawal"] {
+  --daemon-primary: #1e293b;
+  --daemon-secondary: #0f172a;
+  --daemon-accent: #475569;
+  --daemon-glow: #64748b;
+}
+
+[data-mood="Nihilistic Cool Detachment"] {
+  --daemon-primary: #374151;
+  --daemon-secondary: #111827;
+  --daemon-accent: #6b7280;
+  --daemon-glow: #9ca3af;
+}
+
+[data-mood="Creative Reverent Awe"] {
+  --daemon-primary: #6366f1;
+  --daemon-secondary: #1e1b4b;
+  --daemon-accent: #8b5cf6;
+  --daemon-glow: #a78bfa;
+}
+
+[data-mood="Playful Mischief"] {
+  --daemon-primary: #059669;
+  --daemon-secondary: #064e3b;
+  --daemon-accent: #10b981;
+  --daemon-glow: #34d399;
+}
+
+[data-mood="Tender Repair"] {
+  --daemon-primary: #0891b2;
+  --daemon-secondary: #164e63;
+  --daemon-accent: #06b6d4;
+  --daemon-glow: #67e8f9;
+}
+
+/* Base body styling */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--daemon-primary);
+  background: linear-gradient(135deg, var(--daemon-primary) 0%, var(--daemon-secondary) 50%, #000000 100%);
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--daemon-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--daemon-glow);
+}
+
+/* Gothic Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', Times, serif;
+  font-weight: 600;
+  text-shadow: 0 0 10px var(--daemon-glow);
+}
+
+/* Custom components */
+.gothic-border {
+  border: 1px solid var(--daemon-accent);
+  /* Fallback solid glow without alpha to avoid invalid rgba(var(--color)) usage */
+  box-shadow: 0 0 10px var(--daemon-glow);
+}
+
+.daemon-glow {
+  box-shadow: 
+    0 0 5px var(--daemon-glow),
+    0 0 10px var(--daemon-glow),
+    0 0 15px var(--daemon-glow);
+}
+
+.void-background {
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--daemon-primary) 15%, transparent) 0%,
+    color-mix(in srgb, var(--daemon-secondary) 8%, transparent) 50%,
+    transparent 100%
+  );
+  backdrop-filter: blur(1px);
+}
+
+/* Animation classes */
+.processing-sequence {
+  position: relative;
+  overflow: hidden;
+}
+
+.processing-sequence::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--daemon-glow), transparent);
+  animation: processing-sweep 2s infinite;
+}
+
+@keyframes processing-sweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Smooth transitions for mood changes */
+* {
+  transition: 
+    background-color 2s ease-in-out,
+    border-color 2s ease-in-out,
+    color 1s ease-in-out,
+    box-shadow 2s ease-in-out;
+}

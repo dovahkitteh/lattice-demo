@@ -1,0 +1,119 @@
+# Lattice AI System Dependencies
+# Generated from working environment
+
+# Core web framework
+fastapi==0.115.14
+uvicorn==0.34.3
+starlette==0.46.2
+fastapi-cli==0.0.7
+
+# HTTP clients and networking
+aiohttp==3.12.13
+httpx==0.28.1
+httpcore==1.0.9
+httptools==0.6.4
+websockets==15.0.1
+dnspython==2.7.0
+
+# Database and storage
+chromadb==1.0.15
+neo4j==5.28.1
+python-dotenv==1.1.1
+
+# Machine learning and transformers
+transformers==4.53.0
+sentence-transformers==4.1.0
+torch==2.6.0+cu124
+torchvision==0.21.0+cu124
+torchaudio==2.6.0+cu124
+tokenizers==0.21.2
+safetensors==0.5.3
+huggingface-hub==0.33.1
+
+# Data processing and scientific computing
+numpy==2.3.1
+pandas==2.3.1
+scikit-learn==1.7.0
+scipy==1.16.0
+pyarrow==20.0.0
+
+# Natural language processing
+spacy==3.8.7
+spacy-legacy==3.0.12
+spacy-loggers==1.0.5
+nltk==3.9.1
+textstat==0.7.7
+datasets==3.6.0
+
+# Background jobs and scheduling
+APScheduler==3.11.11
+aiosignal==1.3.2
+
+# Graph processing
+networkx==3.5
+
+# GPU monitoring and system utilities
+pynvml==12.0.0
+nvidia-ml-py==12.575.51
+
+# Data validation and serialization
+pydantic==2.11.7
+pydantic-core==2.33.2
+pydantic-extra-types==2.10.5
+pydantic-settings==2.10.1
+
+# Development and testing
+pytest==8.4.1
+pytest-asyncio==1.0.0
+
+# LLM API clients
+anthropic==0.39.0
+
+# Utilities and dependencies
+click==8.2.1
+colorama==0.4.6
+coloredlogs==15.0.1
+Jinja2==3.1.6
+PyYAML==6.0.2
+requests==2.32.4
+urllib3==2.5.0
+certifi==2025.6.15
+packaging==25.0
+setuptools==80.9.0
+filelock==3.18.0
+regex==2024.11.6
+tqdm==4.67.1
+typer==0.16.0
+rich==14.0.0
+Pygments==2.19.2
+
+# Additional NLP and processing libraries
+einops==0.8.1
+tokenizers==0.21.2
+sympy==1.13.1
+joblib==1.5.1
+threadpoolctl==3.6.0
+tenacity==9.1.2
+backoff==2.2.1
+
+# Authentication and security
+bcrypt==4.3.0
+oauthlib==3.3.1
+google-auth==2.40.3
+
+# Monitoring and observability
+opentelemetry-api==1.34.1
+opentelemetry-sdk==1.34.1
+opentelemetry-exporter-otlp-proto-grpc==1.34.1
+posthog==5.4.0
+
+# Language and locale data
+langcodes==3.5.0
+language_data==1.3.0
+cmudict==1.0.33
+
+# Spacy model (downloaded automatically on first use)
+# en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+
+# Note: The spacy model will be downloaded automatically when needed
+# If you want to pre-install it, run: python -m spacy download en_core_web_sm
