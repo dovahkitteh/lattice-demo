@@ -187,6 +187,11 @@ data/user_models/
 !data/*_template.*
 !data/*_example.*
 
+# Exclude specific lore/identity files (personal/custom)
+data/emergence_lore.md
+data/identity_core.yaml
+data/user_identity.yaml
+
 # Ollama models (large binary files)
 tools/ollama/*.gguf
 tools/ollama/*.bin
@@ -230,6 +235,11 @@ yarn-error.log*
 *~
 \#*\#
 .\#*
+
+# Cursor / Claude
+*.local.json
+*.settings.local.json
+.cursorrules.local
 
 # ============================================================================
 # OPERATING SYSTEM FILES
