@@ -1,0 +1,16 @@
+{
+  "hermes": {
+    "label": "Hermes (8K)",
+    "model_path": "Hermes",
+    "context_length": 8192,
+    "port": 5000,
+    "cli_flags": ""
+  },
+  "pocketdoc_dans": {
+    "label": "PocketDoc Dan (4K)",
+    "model_path": "PocketDoc_Dans-PersonalityEngine-V1.3.0-24b-Q4_K_L",
+    "context_length": 4096,
+    "port": 5000,
+    "cli_flags": ""
+  }
+} 

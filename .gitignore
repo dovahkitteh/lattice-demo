@@ -1,0 +1,369 @@
+# Lucifer Lattice AI System - .gitignore
+# Comprehensive gitignore for Python/Node.js AI project
+
+# ============================================================================
+# SENSITIVE FILES - API Keys and Credentials
+# ============================================================================
+.env
+*.key
+*.pem
+*_credentials.json
+secrets/
+.secrets
+
+# Keep example files for documentation
+!.env.example
+
+# ============================================================================
+# PYTHON
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Environments
+.env.local
+.env.*.local
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================================================
+# NODE.JS / DASHBOARD
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# ============================================================================
+# DATABASES AND DATA - Personal/Generated Content
+# ============================================================================
+# ChromaDB vector database (contains user conversations and memories)
+data/lattice/*.sqlite3
+data/lattice/**/*
+!data/lattice/.gitkeep
+
+# Neo4j data (contains relationship graphs)
+data/neo4j/
+
+# Session data - ALL user conversations and sessions
+data/sessions/
+!data/sessions/.gitkeep
+
+# User model storage - Personal AI profiles
+data/daemon_models/
+data/user_models/
+!data/user_models/.gitkeep
+
+# Keep only the example/template files
+!data/*_template.*
+!data/*_example.*
+
+# Exclude specific lore/identity files (personal/custom)
+data/emergence_lore.md
+data/identity_core.yaml
+data/user_identity.yaml
+
+# Ollama models (large binary files)
+tools/ollama/*.gguf
+tools/ollama/*.bin
+
+# ============================================================================
+# LOGS
+# ============================================================================
+logs/
+*.log
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Keep logs directory structure
+!logs/.gitkeep
+
+# ============================================================================
+# IDE AND EDITOR FILES
+# ============================================================================
+# VSCode
+.vscode/
+!.vscode/settings.json.example
+!.vscode/extensions.json
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Cursor / Claude
+*.local.json
+*.settings.local.json
+.cursorrules.local
+
+# ============================================================================
+# OPERATING SYSTEM FILES
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================================================
+# PROJECT-SPECIFIC
+# ============================================================================
+# LLM model files (too large for git)
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+models/
+text-generation-webui/models/
+*.model
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+*.old
+
+# Configuration backups
+*-backup.*
+*.backup.*
+
+# Compiled dashboard
+daemon-dashboard/dist/
+web/static/bundle.js
+web/static/*.bundle.*
+
+# Build artifacts
+*.exe
+*.app
+*.dmg
+*.msi
+
+# ============================================================================
+# DOCUMENTATION BUILD FILES
+# ============================================================================
+docs/_build/
+docs/.doctrees/
+site/
+
+# ============================================================================
+# PACKAGE MANAGERS
+# ============================================================================
+# Poetry
+poetry.lock
+
+# Pipenv
+Pipfile.lock
+
+# ============================================================================
+# MISC
+# ============================================================================
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Large media files (if any)
+*.mp4
+*.avi
+*.mov
+*.wav
+*.mp3
+
+# Test outputs
+test_output/
+test-results/
+
+# Benchmark results
+benchmarks/results/
+
+# ============================================================================
+# KEEP THESE FILES
+# ============================================================================
+# Important: Make sure these ARE tracked
+!README.md
+!requirements.txt
+!requirements-dev.txt
+!package.json
+!.env.example
+!.gitignore
+!LICENSE
+
+# Keep empty directories with .gitkeep
+!**/.gitkeep
+
+# ============================================================================
+# ADDITIONAL SAFEGUARDS - Personal Data
+# ============================================================================
+# Ensure we never accidentally commit these
+*.session
+*_session.*
+conversation_*.json
+chat_history*.json
+user_profile*.json
+personal_*.json
+

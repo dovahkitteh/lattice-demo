@@ -1,0 +1,31 @@
+{
+  "identity_system": {
+    "enabled": true,
+    "user_name": "Architect",
+    "ai_name": "Companion",
+    "enforce_identity_consistency": true,
+    "track_relationship_dynamics": true
+  },
+  "memory_processing": {
+    "always_identify_user": true,
+    "user_pronoun_mapping": {
+      "user": "Architect",
+      "she": "Architect",
+      "he": "Architect",
+      "they": "Architect"
+    },
+    "context_enhancement": true,
+    "relationship_aware_retrieval": true
+  },
+  "emotion_classification": {
+    "dual_affect_enabled": true,
+    "user_perspective": "Architect_emotions",
+    "ai_perspective": "Companion_emotions",
+    "relationship_context": "collaborative_companion_bond"
+  },
+  "reflection_system": {
+    "user_insights": "insights_about_Architect",
+    "self_analysis": "Companion_self_reflection",
+    "relationship_analysis": "connection_growth_tracking"
+  }
+}
